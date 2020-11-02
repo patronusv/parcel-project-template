@@ -117,83 +117,24 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
+})({"js/modal.js":[function(require,module,exports) {
+(function () {
+  var refs = {
+    openModalBtn: document.querySelector('[data-modal-open]'),
+    closeModalBtn: document.querySelector('[data-modal-close]'),
+    modal: document.querySelector('[data-modal]'),
+    logo: document.querySelector('[data-logo]')
   };
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
 
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
+  function toggleModal() {
+    document.body.classList.toggle("modal-open");
+    refs.modal.classList.toggle('is-hidden');
+    refs.logo.classList.toggle('menu-open');
   }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\fonts\\montserrat-v15-latin_cyrillic-500.woff2":[["montserrat-v15-latin_cyrillic-500.ebe978ac.woff2","fonts/montserrat-v15-latin_cyrillic-500.woff2"],"fonts/montserrat-v15-latin_cyrillic-500.woff2"],"./..\\fonts\\montserrat-v15-latin_cyrillic-500.woff":[["montserrat-v15-latin_cyrillic-500.602df506.woff","fonts/montserrat-v15-latin_cyrillic-500.woff"],"fonts/montserrat-v15-latin_cyrillic-500.woff"],"./..\\fonts\\montserrat-v15-latin_cyrillic-600.woff2":[["montserrat-v15-latin_cyrillic-600.fb160d05.woff2","fonts/montserrat-v15-latin_cyrillic-600.woff2"],"fonts/montserrat-v15-latin_cyrillic-600.woff2"],"./..\\fonts\\montserrat-v15-latin_cyrillic-600.woff":[["montserrat-v15-latin_cyrillic-600.f60cf320.woff","fonts/montserrat-v15-latin_cyrillic-600.woff"],"fonts/montserrat-v15-latin_cyrillic-600.woff"],"./..\\fonts\\montserrat-v15-latin_cyrillic-700.woff2":[["montserrat-v15-latin_cyrillic-700.9f86b2aa.woff2","fonts/montserrat-v15-latin_cyrillic-700.woff2"],"fonts/montserrat-v15-latin_cyrillic-700.woff2"],"./..\\fonts\\montserrat-v15-latin_cyrillic-700.woff":[["montserrat-v15-latin_cyrillic-700.1c598198.woff","fonts/montserrat-v15-latin_cyrillic-700.woff"],"fonts/montserrat-v15-latin_cyrillic-700.woff"],"./..\\fonts\\montserrat-v15-latin_cyrillic-800.woff2":[["montserrat-v15-latin_cyrillic-800.738e2c9c.woff2","fonts/montserrat-v15-latin_cyrillic-800.woff2"],"fonts/montserrat-v15-latin_cyrillic-800.woff2"],"./..\\fonts\\montserrat-v15-latin_cyrillic-800.woff":[["montserrat-v15-latin_cyrillic-800.3f6dcb5f.woff","fonts/montserrat-v15-latin_cyrillic-800.woff"],"fonts/montserrat-v15-latin_cyrillic-800.woff"],"./..\\images\\hero\\mobile\\vector.jpg":[["vector.42e7a4d3.jpg","images/hero/mobile/vector.jpg"],"images/hero/mobile/vector.jpg"],"./..\\images\\hero\\mobile\\vector@2x.jpg":[["vector@2x.d19aae04.jpg","images/hero/mobile/vector@2x.jpg"],"images/hero/mobile/vector@2x.jpg"],"./..\\images\\hero\\tablet\\vector.jpg":[["vector.81364e50.jpg","images/hero/tablet/vector.jpg"],"images/hero/tablet/vector.jpg"],"./..\\images\\hero\\tablet\\vector@2x.jpg":[["vector@2x.ae4e07b9.jpg","images/hero/tablet/vector@2x.jpg"],"images/hero/tablet/vector@2x.jpg"],"./..\\images\\hero\\desktop\\vector.jpg":[["vector.3511be77.jpg","images/hero/desktop/vector.jpg"],"images/hero/desktop/vector.jpg"],"./..\\images\\hero\\desktop\\vector@2x.jpg":[["vector@2x.78c16c98.jpg","images/hero/desktop/vector@2x.jpg"],"images/hero/desktop/vector@2x.jpg"],"./..\\images\\svg\\square-girl.svg":[["square-girl.44f45900.svg","images/svg/square-girl.svg"],"images/svg/square-girl.svg"],"./..\\images\\svg\\square-gir-desktop.svg":[["square-gir-desktop.a5152ea1.svg","images/svg/square-gir-desktop.svg"],"images/svg/square-gir-desktop.svg"],"./..\\images\\svg\\square-phone.svg":[["square-phone.077702d4.svg","images/svg/square-phone.svg"],"images/svg/square-phone.svg"],"./..\\images\\svg\\square-phone-desktop.svg":[["square-phone-desktop.d36d1854.svg","images/svg/square-phone-desktop.svg"],"images/svg/square-phone-desktop.svg"],"./..\\images\\svg\\square-money.svg":[["square-money.6a597eed.svg","images/svg/square-money.svg"],"images/svg/square-money.svg"],"./..\\images\\svg\\square-money-desktop.svg":[["square-money-desktop.46aeb257.svg","images/svg/square-money-desktop.svg"],"images/svg/square-money-desktop.svg"],"./..\\images\\svg\\campfire.svg":[["campfire.0e32ec47.svg","images/svg/campfire.svg"],"images/svg/campfire.svg"],"./..\\images\\program\\mobile\\main-pic@1x.png":[["main-pic@1x.8a7aae42.png","images/program/mobile/main-pic@1x.png"],"images/program/mobile/main-pic@1x.png"],"./..\\images\\program\\mobile\\main-pic@2x.png":[["main-pic@2x.4a01bbda.png","images/program/mobile/main-pic@2x.png"],"images/program/mobile/main-pic@2x.png"],"./..\\images\\program\\tablet\\main-pic@1x.png":[["main-pic@1x.3bceb3a7.png","images/program/tablet/main-pic@1x.png"],"images/program/tablet/main-pic@1x.png"],"./..\\images\\program\\tablet\\main-pic@2x.png":[["main-pic@2x.1b1dc7aa.png","images/program/tablet/main-pic@2x.png"],"images/program/tablet/main-pic@2x.png"],"./..\\images\\program\\desktop\\main-pic@1x.png":[["main-pic@1x.c32757c3.png","images/program/desktop/main-pic@1x.png"],"images/program/desktop/main-pic@1x.png"],"./..\\images\\program\\desktop\\main-pic@2x.png":[["main-pic@2x.28cf841a.png","images/program/desktop/main-pic@2x.png"],"images/program/desktop/main-pic@2x.png"],"./..\\images\\svg\\mark-litle.svg":[["mark-litle.91b91ade.svg","images/svg/mark-litle.svg"],"images/svg/mark-litle.svg"],"./..\\images\\svg\\mark-big.svg":[["mark-big.a8b0ae85.svg","images/svg/mark-big.svg"],"images/svg/mark-big.svg"],"./..\\images\\registration\\mobile\\registr.jpg":[["registr.3b4549db.jpg","images/registration/mobile/registr.jpg"],"images/registration/mobile/registr.jpg"],"./..\\images\\registration\\tablet\\registr.jpg":[["registr.242906af.jpg","images/registration/tablet/registr.jpg"],"images/registration/tablet/registr.jpg"],"./..\\images\\registration\\desktop\\registr.jpg":[["registr.4f4d7347.jpg","images/registration/desktop/registr.jpg"],"images/registration/desktop/registr.jpg"],"./..\\images\\registration\\mobile\\registr@2x.jpg":[["registr@2x.20664175.jpg","images/registration/mobile/registr@2x.jpg"],"images/registration/mobile/registr@2x.jpg"],"./..\\images\\registration\\tablet\\registr@2x.jpg":[["registr@2x.6fbec324.jpg","images/registration/tablet/registr@2x.jpg"],"images/registration/tablet/registr@2x.jpg"],"./..\\images\\registration\\desktop\\registr2x.jpg":[["registr2x.06c3865d.jpg","images/registration/desktop/registr2x.jpg"],"images/registration/desktop/registr2x.jpg"],"./..\\images\\svg\\phone.svg":[["phone.649f4007.svg","images/svg/phone.svg"],"images/svg/phone.svg"],"./..\\images\\svg\\instagram.svg":[["instagram.b424317e.svg","images/svg/instagram.svg"],"images/svg/instagram.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})();
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +338,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/modal.js"], null)
+//# sourceMappingURL=/modal.4331011c.js.map
