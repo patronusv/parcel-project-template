@@ -9,7 +9,7 @@
   padding: 0px;
   margin: 0px auto;
   @media (min-width: $responsive) and (max-width: $mobile-max) {
-    height: 507px;
+    // height: 507px;
     background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.8),
@@ -18,7 +18,7 @@
       url(../images/registration/mobile/registr.jpg);
   }
   @media (min-width: $tablet) and (max-width: $tablet-max) {
-    height: 520px;
+    // height: 520px;
     background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.8),
@@ -28,7 +28,7 @@
   }
   @media (min-width: $desktop) {
     max-width: 1680px;
-    height: 840px;
+    // height: 840px;
     background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.8),
@@ -177,7 +177,7 @@
 
 .registration__name {
   margin-bottom: 30px;
-  @media (min-width: $tablet) and (max-width: $tablet-max) {
+  @media (min-width: $responsive) and (max-width: $tablet-max) {
     margin-bottom: 20px;
   }
 }
