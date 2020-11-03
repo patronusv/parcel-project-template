@@ -216,24 +216,32 @@
 .slider .slider__item.slick-current {
   border: 2px solid $accent-color;
   border-radius: 50%;
-  // box-shadow: 0px 0px 2px 5px $accent-color;
+  // box-shadow: 0px 0px 2px 0px $accent-color incent;
 }
 
 .slider-big .slick-arrow.slick-prev {
-  left: 0;
+  left: -20px;
   background: url('../images/svg/arrow-left.svg') 0 0 / 100% no-repeat;
+
+  @media screen and (min-width: 1354px) {
+    left: 0;
+  }
 }
 
 .slider-big .slick-arrow.slick-next {
-  right: 0;
+  right: -20px;
   background: url('../images/svg/arrow-right.svg') 0 0 / 100% no-repeat;
+
+  @media screen and (min-width: 1354px) {
+    right: 0;
+  }
 }
 .slider .slick-arrow.slick-prev {
-  left: -44px;
+  left: -40px;
   background: url('../images/svg/arrow-left.svg') 0 0 / 100% no-repeat;
 }
 
 .slider .slick-arrow.slick-next {
-  right: -44px;
+  right: -40px;
   background: url('../images/svg/arrow-right.svg') 0 0 / 100% no-repeat;
 }
