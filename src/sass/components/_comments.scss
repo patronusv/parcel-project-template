@@ -160,18 +160,21 @@
   position: relative;
   padding: 0px 50px;
 }
-
+// .slider.slick-slider {
+//   width: 500px;
+// }
 .slider__item {
   width: 54px;
 }
 
 .slider .slick-arrow {
   position: absolute;
+  border: none;
   top: 50%;
   z-index: 10;
   font-size: 0;
   width: 25px;
-  height: 0;
+  height: 15px;
 }
 
 .slider .slick-arrow.slick-prev {
