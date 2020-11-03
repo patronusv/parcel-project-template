@@ -3,6 +3,11 @@
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
+
+    @media screen and (min-width: 1354px) {
+      padding-top: 130px;
+      padding-bottom: 130px;
+    }
   }
 
   &__info {
