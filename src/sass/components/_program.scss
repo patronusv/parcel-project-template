@@ -14,69 +14,104 @@
     @include font(800, 46px, 1.304);
   }
 }
-
-.program {
-  background-color: $primary-title-color;
+.program__container {
+  position: relative;
+}
+.program__container::after {
+  content: '';
+  position: absolute;
+  // display: block;
+  background-size: cover;
   background-repeat: no-repeat;
 
-  background-size: 120px 137px, cover;
-  background-position: right bottom 565px, left top;
-
-  background-image: url(../images/program/mobile/main-pic@1x.png),
-    linear-gradient($primary-title-color 89.8%, $primary-bg-color 89.8%);
-
-  @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    background-image: url(../images/program/mobile/main-pic@2x.png),
-      linear-gradient($primary-title-color 89.8%, $primary-bg-color 89.8%);
-  }
-
   @media screen and (min-width: 768px) {
-    background-size: 384px 280px, cover;
-    background-position: right bottom 650px, left top;
-    background-image: url(../images/program/tablet/main-pic@1x.png),
-      linear-gradient($primary-title-color 84.3%, $primary-bg-color 84.3%);
+    right: -20px;
+    bottom: 650px;
+    width: 384px;
+    height: 280px;
+    background-image: url(../images/program/tablet/main-pic@1x.png);
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
-      background-image: url(../images/program/tablet/main-pic@2x.png),
-        linear-gradient($primary-title-color 84.3%, $primary-bg-color 84.3%);
+      background-image: url(../images/program/tablet/main-pic@2x.png);
     }
   }
 
   @media screen and (min-width: 1354px) {
-    background-size: 672px 502px, cover;
-    background-position: left bottom 470px, left top;
-    // background-position: -88px bottom, left top;
-
-    background-image: url(../images/program/desktop/main-pic@1x.png),
-      linear-gradient($primary-title-color 86.2%, $primary-bg-color 86.2%);
+    left: -150px;
+    bottom: 450px;
+    width: 672px;
+    height: 502px;
+    background-image: url(../images/program/desktop/main-pic@1x.png);
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
-      background-image: url(../images/program/desktop/main-pic@2x.png),
-        linear-gradient($primary-title-color 86.2%, $primary-bg-color 86.2%);
+      background-image: url(../images/program/desktop/main-pic@2x.png);
     }
+  }
+}
+
+.program {
+  position: relative;
+  background-color: $primary-title-color;
+  background-size: cover;
+  background-position: left top;
+  background-image: linear-gradient(
+    $primary-title-color 89.8%,
+    $primary-bg-color 89.8%
+  );
+
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(
+      $primary-title-color 84.3%,
+      $primary-bg-color 84.3%
+    );
+  }
+  @media screen and (min-width: 1354px) {
+    background-image: linear-gradient(
+      $primary-title-color 84.1%,
+      $primary-bg-color 84.1%
+    );
   }
 
   &__list {
     position: relative;
-    padding-left: 100px;
-    margin-bottom: 50px;
+
+    @media screen and (max-width: 767px) {
+      padding-left: 100px;
+      margin-bottom: 50px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        // display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        right: -20px;
+        bottom: -85px;
+        width: 120px;
+        height: 137px;
+        background-image: url(../images/program/mobile/main-pic@1x.png);
+
+        @media screen and (min-device-pixel-ratio: 2),
+          screen and (min-resolution: 192dpi),
+          screen and (min-resolution: 2dppx) {
+          background-image: url(../images/program/mobile/main-pic@2x.png);
+        }
+      }
+    }
 
     @media screen and (min-width: 768px) and (max-width: 1353px) {
       padding-bottom: 189px;
       padding-left: 119px;
-      margin-bottom: 0;
     }
 
     @media screen and (min-width: 1354px) {
       display: flex;
-      padding-left: 0px;
-      padding-bottom: 363px;
+      padding-bottom: 164px;
     }
 
     &::before {
@@ -86,6 +121,7 @@
       width: 1px;
       height: 1250px;
       left: 68px;
+      bottom: 90px;
       background-color: $primary-bg-color;
 
       @media screen and (min-width: 368px) {
@@ -93,6 +129,7 @@
       }
       @media screen and (min-width: 768px) and (max-width: 1353px) {
         left: 57px;
+        bottom: 310px;
         height: 1040px;
       }
       @media screen and (min-width: 1354px) {
@@ -127,14 +164,17 @@
       position: absolute;
       width: 12px;
       height: 12px;
-      left: 0px;
+      // left: -38px;
+      top: 7px;
       transform: translateX(-38px);
       align-items: center;
+      justify-content: center;
       background-color: $accent-color;
       border-radius: 50%;
 
       @media screen and (min-width: 768px) and (max-width: 1353px) {
-        transform: translateX(-68px);
+        left: -30px;
+        top: 7px;
       }
 
       @media screen and (min-width: 1354px) {
@@ -236,9 +276,14 @@
     .program__meta & + & {
       margin-left: 50px;
     }
-
     &:not(:last-child) {
       margin-bottom: 40px;
+    }
+    &:nth-child(1) {
+      width: 176px;
+    }
+    &:nth-child(2) {
+      width: 155px;
     }
   }
 
@@ -248,17 +293,9 @@
     }
   }
 }
-
 .program__meta {
   @media screen and (min-width: 768px) and (max-width: 1353px) {
     display: flex;
-    // &:nth-child(1) {
-    //   width: 176px;
-    // }
-
-    // &:nth-child(2) {
-    //   width: 155px;
-    // }
   }
 }
 
@@ -274,14 +311,15 @@
     width: 100%;
     text-align: center;
   }
-
   @media screen and (min-width: 1354px) {
     display: none;
   }
 }
 
 .program-features__list {
-  padding: 53px 34px 20px 30px;
+  position: relative;
+  z-index: 100;
+  padding: 53px 34px 40px 30px;
   counter-reset: number;
 
   letter-spacing: 0.08em;
@@ -290,13 +328,13 @@
   box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
 
   @media screen and (min-width: 768px) {
-    padding: 63px 118px 25px 98px;
+    padding: 63px 118px 13px 98px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   @media screen and (min-width: 1354px) {
-    padding: 70px 62px 33px 64px;
+    padding: 75px 62px 33px 84px;
   }
 }
 
@@ -304,16 +342,22 @@
   width: 100%;
   @include font(700, 14px, 1.43);
 
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
   @media screen and (min-width: 768px) and (max-width: 1353px) {
     width: calc((100% - 20px) / 2);
+    padding-top: 16px;
+    padding-bottom: 37px;
   }
   @media screen and (min-width: 1354px) {
     width: calc((100% - 120px) / 3);
     @include font(700, 20px, 1.4);
-
-    &:not(:last-child) {
-      margin-bottom: 32px;
-    }
+    padding-top: 26px;
+    padding-bottom: 95px;
   }
 }
 
@@ -324,12 +368,12 @@
 
   @media screen and (min-width: 768px) and (max-width: 1353px) {
     padding-top: 16px;
-    padding-bottom: 37px;
   }
 
   @media screen and (min-width: 1354px) {
     @include font(700, 20px, 1.4);
     width: 356px;
+    padding-top: 26px;
   }
 
   &::before {
@@ -339,27 +383,31 @@
     height: 2px;
     background-color: $accent-color;
     position: absolute;
-    top: -17px;
+    top: -13px;
 
+    @media screen and (min-width: 768px) and (max-width: 1353px) {
+      top: -7px;
+    }
     @media screen and (min-width: 1354px) {
-      top: -26px;
+      top: -10px;
     }
   }
 
   &::after {
+    position: absolute;
     content: '0' counter(number);
-    font-size: 14px;
-    line-height: 1.71;
+    top: -23px;
+    left: 29px;
+    @include font(700, 14px, 1.71);
     color: $accent-color;
     counter-increment: number;
-    position: absolute;
-    top: -28px;
-    left: 29px;
 
+    @media screen and (min-width: 768px) and (max-width: 1353px) {
+      top: -16px;
+    }
     @media screen and (min-width: 1354px) {
-      font-size: 20px;
-      line-height: 1.65;
-      top: -41px;
+      top: -26px;
+      @include font(700, 20px, 1.65);
     }
   }
 }
