@@ -24,21 +24,9 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  right: -10px;
-  bottom: 550px;
-  width: 176px;
-  height: 137px;
-  background-image: url(../images/program/mobile/main-pic@1x.png);
-
-  @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    background-image: url(../images/program/mobile/main-pic@2x.png);
-  }
-
   @media screen and (min-width: 768px) {
-    right: 0;
-    bottom: 565px;
+    right: -20px;
+    bottom: 650px;
     width: 384px;
     height: 280px;
     background-image: url(../images/program/tablet/main-pic@1x.png);
@@ -70,48 +58,22 @@
   background-color: $primary-title-color;
   background-size: cover;
   background-position: left top;
-
   background-image: linear-gradient(
     $primary-title-color 89.8%,
     $primary-bg-color 89.8%
   );
-  @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    background-image: linear-gradient(
-      $primary-title-color 89.8%,
-      $primary-bg-color 89.8%
-    );
-  }
 
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(
       $primary-title-color 84.3%,
       $primary-bg-color 84.3%
     );
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      background-image: linear-gradient(
-        $primary-title-color 84.3%,
-        $primary-bg-color 84.3%
-      );
-    }
   }
-
   @media screen and (min-width: 1354px) {
     background-image: linear-gradient(
       $primary-title-color 84.1%,
       $primary-bg-color 84.1%
     );
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      background-image: linear-gradient(
-        $primary-title-color 84.1%,
-        $primary-bg-color 84.1%
-      );
-    }
   }
 
   &__list {
@@ -120,6 +82,26 @@
     @media screen and (max-width: 767px) {
       padding-left: 100px;
       margin-bottom: 50px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        // display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        right: -20px;
+        bottom: -85px;
+        width: 120px;
+        height: 137px;
+        background-image: url(../images/program/mobile/main-pic@1x.png);
+
+        @media screen and (min-device-pixel-ratio: 2),
+          screen and (min-resolution: 192dpi),
+          screen and (min-resolution: 2dppx) {
+          background-image: url(../images/program/mobile/main-pic@2x.png);
+        }
+      }
     }
 
     @media screen and (min-width: 768px) and (max-width: 1353px) {
@@ -139,7 +121,7 @@
       width: 1px;
       height: 1250px;
       left: 68px;
-      bottom: 60px;
+      bottom: 90px;
       background-color: $primary-bg-color;
 
       @media screen and (min-width: 368px) {
@@ -147,7 +129,7 @@
       }
       @media screen and (min-width: 768px) and (max-width: 1353px) {
         left: 57px;
-        bottom: 285px;
+        bottom: 310px;
         height: 1040px;
       }
       @media screen and (min-width: 1354px) {
