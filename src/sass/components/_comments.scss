@@ -153,6 +153,7 @@
 
 .slick-track {
   display: flex;
+  justify-content: center;
 }
 
 .slide-big {
@@ -164,16 +165,30 @@
 .slider-big__item {
   width: 54px;
 }
-
+.slider-container {
+  margin: 0 auto;
+  width: 182px;
+  @media screen and (min-width: 768px) {
+    width: 558px;
+  }
+}
 .slider {
   min-width: 0;
   position: relative;
-  padding: 0px 50px;
+  // padding: 0px 40px;
   text-align: center;
 }
 
 .slider__item {
-  width: 54px;
+  text-align: center;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
 }
 
 .slider-big .slick-arrow {
