@@ -10,56 +10,26 @@
   margin: 0px auto;
   @media (min-width: $responsive) and (max-width: $mobile-max) {
     // height: 507px;
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8)
-      ),
-      url(../images/registration/mobile/registr.jpg);
+    background-image: url(../images/registration/mobile/registr.png);
   }
   @media (min-width: $tablet) and (max-width: $tablet-max) {
     // height: 520px;
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8)
-      ),
-      url(../images/registration/tablet/registr.jpg);
+    background-image: url(../images/registration/tablet/registr.png);
   }
   @media (min-width: $desktop) {
     max-width: 1680px;
     // height: 840px;
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8)
-      ),
-      url(../images/registration/desktop/registr.jpg);
+    background-image: url(../images/registration/desktop/registr.png);
   }
 
   @media (min-width: $responsive) and (max-width: $mobile-max) and (min-resolution: 2dppx) {
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8)
-      ),
-      url(../images/registration/mobile/registr@2x.jpg);
+    background-image: url(../images/registration/mobile/registr2x.png);
   }
   @media (min-width: $tablet) and (max-width: $tablet-max) and (min-resolution: 2dppx) {
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8)
-      ),
-      url(../images/registration/tablet/registr@2x.jpg);
+    background-image: url(../images/registration/tablet/registr2x.png);
   }
   @media (min-width: $desktop) and (min-resolution: 2dppx) {
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8)
-      ),
-      url(../images/registration/desktop/registr2x.jpg);
+    background-image: url(../images/registration/desktop/registr2x.png);
   }
 }
 
