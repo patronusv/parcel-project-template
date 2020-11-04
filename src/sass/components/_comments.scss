@@ -74,11 +74,19 @@
     }
   }
 
-  &__svg {
+  &__social-link {
     width: 30px;
     height: 30px;
     margin: 0 auto;
     margin-bottom: 20px;
+    display: block;
+  }
+
+  &__svg {
+    width: 30px;
+    height: 30px;
+    // margin: 0 auto;
+    // margin-bottom: 20px;
   }
 
   &__student {

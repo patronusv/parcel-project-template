@@ -22,7 +22,7 @@ $(document).ready(function () {
         asNavFor: ".slider-big",        
         mobileFirst: true,
         focusOnSelect: true,
-        variableWidth: true,        
+        variableWidth: true,            
         // centerMode: true,
         
         
