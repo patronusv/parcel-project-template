@@ -155,9 +155,9 @@
   }
 }
 
-// .slick-list {
-//   overflow: visible;
-// }
+.slick-list {
+  overflow: hidden;
+}
 
 .slick-track {
   display: flex;
@@ -168,7 +168,7 @@
 .slider-big {
   min-width: 0;
   position: relative;
-  padding: 0px 50px;
+  padding: 0;
 }
 
 // .slider-big__item {
@@ -187,10 +187,10 @@
   position: relative;
   padding: 0px 10px;
   text-align: center;
-  overflow: visible;
+  // overflow: visible;
 }
 
-.slider__item {
+.slider .slider__item {
   text-align: center;
   &:not(:last-child) {
     margin-right: 10px;
