@@ -2325,6 +2325,10 @@ img {
   color: #ff6b09;
 }
 
+.slick-list {
+  overflow: hidden;
+}
+
 .slick-track {
   display: flex;
   justify-content: center;
@@ -2334,7 +2338,7 @@ img {
 .slider-big {
   min-width: 0;
   position: relative;
-  padding: 0px 50px;
+  padding: 0;
 }
 
 .slider-container {
@@ -2353,17 +2357,16 @@ img {
   position: relative;
   padding: 0px 10px;
   text-align: center;
-  overflow: visible;
 }
 
-.slider__item {
+.slider .slider__item {
   text-align: center;
 }
-.slider__item:not(:last-child) {
+.slider .slider__item:not(:last-child) {
   margin-right: 10px;
 }
 @media screen and (min-width: 768px) {
-  .slider__item:not(:last-child) {
+  .slider .slider__item:not(:last-child) {
     margin-right: 30px;
   }
 }
