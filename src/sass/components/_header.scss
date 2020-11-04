@@ -12,6 +12,9 @@
 .logo {
   position: relative;
   z-index: 1;
+  animation: headShake;
+  animation-duration: 2000ms;
+  --animate-repeat: 6;
 }
 .logo__icon {
   width: 80px;
