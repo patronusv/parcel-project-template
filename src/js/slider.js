@@ -30,7 +30,7 @@ $(document).ready(function () {
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 7,
+                    slidesToShow: 6,
                     infinite: false,
                     arrows: false,
 
