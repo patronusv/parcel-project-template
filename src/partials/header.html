@@ -1,0 +1,48 @@
+<header class="page-header">
+    <div class="container header-container">
+        <a href="./index.html" class="logo animate__animated animate__repeat-1" data-logo><svg class="logo__icon">
+                <use href="./images/header/header-sprite.svg#logo"></use>                
+            </svg></a>
+        <nav class="page-header__navigation">
+            <ul class="page-header__navigation-list list">
+                <li class="page-header__navigation-list-item"><a href="#program"
+                        class="page-header__navigation-link link">Программы обучения</a></li>
+                <li class="page-header__navigation-list-item"><a href="#teacher" class="page-header__navigation-link link">О
+                        нас</a></li>
+                <li class="page-header__navigation-list-item"><a href="#process"
+                        class="page-header__navigation-link link">Варианты обучения</a></li>
+                <li class="page-header__navigation-list-item"><a href="#contacts-tel"
+                        class="page-header__navigation-link link">Контакты</a></li>
+            </ul>
+        </nav>
+        <a href="#contacts-tel" class="page-header__contacts-link--desktop link">Консультация по телефону</a>
+        <button type="button" class="menu-button" aria-expanded="false" aria-controls="mobile-menu" data-modal-open>
+            <svg class="" width="20px" height="12px">
+                <use class="menu-button__icon" href="./images/header/header-sprite.svg#menu"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="mobile-menu is-hidden" data-modal>
+        <div class="container">         
+                <button type="button" class="menu-button--close" aria-expanded="true" aria-controls="mobile-menu" data-modal-close>
+                    <svg class="" width="15px" height="15px">
+                        <use class="menu-button__icon" href="./images/header/header-sprite.svg#menu-close"></use>
+                    </svg>
+                </button>            
+            <nav class="mobile-menu__navigation">
+                <ul class="mobile-menu__navigation-list list">
+                    <li class="mobile-menu__navigation-list-item"><a href="#program" class="mobile-menu__navigation-link link" data-menu-link>Программы
+                            обучения</a></li>
+                    <li class="mobile-menu__navigation-list-item"><a href="#teacher" class="mobile-menu__navigation-link link" data-menu-link>О
+                            нас</a></li>
+                    <li class="mobile-menu__navigation-list-item"><a href="#process" class="mobile-menu__navigation-link link" data-menu-link>Варианты
+                            обучения</a></li>
+                    <li class="mobile-menu__navigation-list-item"><a href="#contacts-tel" class="mobile-menu__navigation-link link" data-menu-link>Контакты</a>
+                    </li>
+                </ul>
+                <a href="#contacts-tel" class="page-header__contacts-link--menu link" data-menu-link>Консультация по телефону</a>
+            </nav>
+        </div>
+
+    </div>
+</header>

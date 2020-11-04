@@ -1,0 +1,215 @@
+.page-header {
+  padding: 30px 0;
+  @media screen and (min-width: 768px) and (max-width: 1353px) {
+    padding: 42px 0;
+  }
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  position: relative;
+  z-index: 1;
+  animation: headShake;
+  animation-duration: 2000ms;
+  --animate-repeat: 6;
+}
+.logo__icon {
+  width: 80px;
+  height: 29px;
+  --color1: $primary-title-color;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .logo.menu-open & {
+    --color1: #ffffff;
+    --color3: #ffffff;
+  }
+
+  @media screen and (max-width: 767px) {
+    --color3: $primary-title-color;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 128px;
+    height: 45px;
+    .logo.menu-open & {
+      --color3: #ff6b09;
+    }
+  }
+}
+
+// .logo__mobile {
+//   fill: $primary-title-color;
+//   &--dark-theme {
+//     fill: $primary-bg-color;
+//     @media screen and (min-width: 768px) {
+//       display: none;
+//     }
+//   }
+//   @media screen and (min-width: 768px) {
+//     display: none;
+//   }
+// }
+.page-header__navigation {
+  margin-left: auto;
+  margin-right: 60px;
+  @media screen and (max-width: 1353px) {
+    display: none;
+  }
+}
+.page-header__navigation-list {
+  display: flex;
+}
+.page-header__navigation-list-item {
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+.page-header__navigation-link {
+  @include font(700, 14px, 1.21);
+  display: block;
+  padding: 27px 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: $primary-text-color;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+.menu-button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+  @media screen and (min-width: 1354px) {
+    display: none;
+  }
+}
+.menu-button--close {
+  @extend .menu-button;
+  color: $primary-bg-color;
+  margin-left: auto;
+  margin-bottom: 50px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 72px;
+  }
+}
+.menu-button__icon {
+  fill: currentColor;
+}
+
+.mobile-menu {
+  position: fixed;
+  padding-top: 37px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 14, 14, 0.904);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: scroll;
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  @media screen and (min-width: 768px) {
+    padding-top: 59px;
+  }
+
+  @media screen and (min-width: 1354px) {
+    display: none;
+  }
+}
+// .menu-container {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin-bottom: 50px;
+//   @media screen and (min-width: 768px) {
+//     margin-bottom: 72px;
+//   }
+// }
+.mobile-menu__navigation-list {
+  margin-bottom: 50px;
+  @media screen and (min-width: 768px) {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.mobile-menu__navigation-link {
+  @include font(800, 20px, 1.8);
+  letter-spacing: 0.03em;
+  color: $primary-bg-color;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 26px;
+  }
+}
+
+.page-header__contacts-link {
+  padding: 14px 5px;
+  width: 260px;
+  @include font(700, 12px, 1.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: $accent-color;
+  background-color: transparent;
+  border: 2px solid;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $primary-bg-color;
+    background-color: $accent-color;
+  }
+
+  &--menu {
+    @extend .page-header__contacts-link;
+    margin: 0 auto;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+  &--desktop {
+    @extend .page-header__contacts-link;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+    @media screen and (max-width: 1353px) {
+      margin-left: auto;
+      margin-right: 40px;
+    }
+
+    @media screen and (min-width: 1354px) {
+      padding: 26px 5px;
+      width: 336px;
+      font-size: 14px;
+      line-height: 1.21;
+      letter-spacing: 0.14em;
+    }
+  }
+}
