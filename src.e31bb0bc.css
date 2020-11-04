@@ -371,6 +371,9 @@ img {
 .logo {
   position: relative;
   z-index: 1;
+  animation: headShake;
+  animation-duration: 2000ms;
+  --animate-repeat: 6;
 }
 
 .logo__icon {
@@ -695,6 +698,11 @@ img {
   letter-spacing: 0.08em;
   color: #111518;
   margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) and (max-width: 1353px) {
+  .hero__title--desc {
+    width: 280px;
+  }
 }
 @media screen and (min-width: 1354px) {
   .hero__title--desc {
@@ -2343,11 +2351,11 @@ img {
 
 .slider-container {
   margin: 0 auto;
-  width: 206px;
+  width: 214px;
 }
 @media screen and (min-width: 768px) {
   .slider-container {
-    width: 498px;
+    width: 518px;
   }
 }
 
@@ -2361,6 +2369,7 @@ img {
 
 .slider .slider__item {
   text-align: center;
+  border: 2px solid transparent;
 }
 .slider .slider__item:not(:last-child) {
   margin-right: 10px;
