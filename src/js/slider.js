@@ -8,8 +8,9 @@ $(document).ready(function () {
         responsive:[
             {
                 breakpoint: 768,
-                settings: {
+                settings: {                    
                     arrows: true,
+                   
 
                 }
             }
