@@ -22,16 +22,13 @@ $(document).ready(function () {
         asNavFor: ".slider-big",        
         mobileFirst: true,
         focusOnSelect: true,
-        variableWidth: true,            
-        // centerMode: true,
-        
+        variableWidth: true,  
         
         responsive:[
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 6,
-                    infinite: false,
+                    slidesToShow: 6,                    
                     arrows: false,
 
                 }
@@ -39,10 +36,9 @@ $(document).ready(function () {
         ]
     });
     $('.slider').slick('reInit');
-    $('.slider').slick('setPosition');
-    $('.slider').slick('goTo', 0);
-    $('.slider-big').slick('reInit');
-    $('.slider-big').slick('setPosition');
+    $('.slider').slick('setPosition');    
+    // $('.slider-big').slick('reInit');
+    // $('.slider-big').slick('setPosition');
     
 
 
