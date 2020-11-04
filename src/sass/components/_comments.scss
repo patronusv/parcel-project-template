@@ -176,9 +176,9 @@
 // }
 .slider-container {
   margin: 0 auto;
-  width: 206px;
+  width: 214px;
   @media screen and (min-width: 768px) {
-    width: 498px;
+    width: 518px;
   }
 }
 .slider {
@@ -192,6 +192,7 @@
 
 .slider .slider__item {
   text-align: center;
+  border: 2px solid transparent;
   &:not(:last-child) {
     margin-right: 10px;
   }
